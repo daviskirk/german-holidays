@@ -23,6 +23,7 @@ STATE_CODE_MAP = {
     'TH':'Thüringen',
 }
 
+
 class StateCodeError(KeyError):
     def __init__(self, message='', state_code=None):
         if state_code:
