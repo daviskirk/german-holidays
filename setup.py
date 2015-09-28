@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='German-Holidays',
-    version='0.1',
+    name='germanholidays',
+    version='0.1.0',
     url='http://github.com/daviskirk/german-holidays',
     license='MIT',
     author='Davis Kirkendall',
