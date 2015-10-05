@@ -1,0 +1,33 @@
+package:
+  name: germanholidays
+  version: "0.1"
+
+source:
+  url: https://github.com/daviskirk/germanholidays.git
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pandas
+  run:
+    - python
+    - setuptools
+    - pandas
+test:
+  # Python imports
+  imports:
+    - german_holidays
+    - german_holidays.state_codes
+
+about:
+  home: https://github.com/daviskirk/germanholidays
+  license: MIT License
+  summary: 'German holidays in pandas.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
