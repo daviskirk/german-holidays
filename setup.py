@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='germanholidays',
-    version='0.1.0',
+    version='0.1.1',
     url='http://github.com/daviskirk/german-holidays',
     license='MIT',
     author='Davis Kirkendall',
