@@ -1,7 +1,13 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
-State codes
+Two-letter codes for each federal state of the Federal Republic of Germany
+
+STATE_CODE_MAP is a dict mapping from the two-letter state code to the
+full name of the state in German.
+
+INVERSE_STATE_CODE_MAP is a dict mapping from the name (in either English
+or German) to the two-letter state code.
 """
 
 STATE_CODE_MAP = {
@@ -23,51 +29,52 @@ STATE_CODE_MAP = {
     'TH': 'Thüringen',
 }
 
+_state_code_str = '\n'.join('{} => {}'.format(k, v)
+                            for k, v in STATE_CODE_MAP.items())
+
 INVERSE_STATE_CODE_MAP = {
     v: k for k, v in STATE_CODE_MAP.items()
 }
 
+# Add english names to the inverse state code map
 INVERSE_STATE_CODE_MAP.update(
     {
-        'Baden-Württemberg': 'BW',
         'Bavaria': 'BY',
-        'Berlin': 'BE',
-        'Brandenburg': 'BB',
-        'Bremen': 'HB',
-        'Hamburg': 'HH',
         'Hesse': 'HE',
         'Lower Saxony': 'NI',
         'Mecklenburg-Western Pomerania': 'MV',
         'North Rhine-Westphalia': 'NW',
         'Northrhine-Westphalia': 'NW',
         'Rhineland-Palatinate': 'RP',
-        'Saarland': 'SL',
         'Saxony': 'SN',
         'Saxony-Anhalt': 'ST',
-        'Schleswig-Holstein': 'SH',
         'Thuringia': 'TH',
     }
 )
 
+# Add normalised / canonicalised names
 for k, v in tuple(INVERSE_STATE_CODE_MAP.items()):
-    keys = [
-        k.lower(),
-        k.upper(),
-        k.replace('-', ' '),
-        k.lower().replace('-', ' '),
-        k.upper().replace('-', ' '),
-    ]
-    for k in keys:
-        INVERSE_STATE_CODE_MAP[k] = v
+    INVERSE_STATE_CODE_MAP[k.replace('ü', 'u')] = v
+    INVERSE_STATE_CODE_MAP[k.replace('ü', 'ue')] = v
+for k, v in tuple(INVERSE_STATE_CODE_MAP.items()):
+    INVERSE_STATE_CODE_MAP[k.replace('-', ' ')] = v
+for k, v in tuple(INVERSE_STATE_CODE_MAP.items()):
+    INVERSE_STATE_CODE_MAP[k.lower()] = v
+    INVERSE_STATE_CODE_MAP[k.upper()] = v
+
+# Allow lower-case state codes in STATE_CODE_MAP
+for k, v in tuple(STATE_CODE_MAP.items()):
+    STATE_CODE_MAP[k.lower()] = v
+# Allow state codes as bytes
+for k, v in tuple(STATE_CODE_MAP.items()):
+    STATE_CODE_MAP[bytes(k, encoding='ASCII')] = v
 
 
 class StateCodeError(KeyError):
     def __init__(self, message='', state_code=None):
         if state_code:
-            code_str = '\n'.join('{} => {}'.format(k, v)
-                                 for k, v in STATE_CODE_MAP.items())
             state_mode_msg = (
                 'State code {} is not valid. Must be one of:\n{}'
-            ).format(state_code, code_str)
+            ).format(state_code, _state_code_str)
             message += state_mode_msg
         super(StateCodeError, self).__init__(message)
