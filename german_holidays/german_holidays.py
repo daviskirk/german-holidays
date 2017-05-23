@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """
 German bank holiday.
@@ -45,30 +45,30 @@ class Fronleichnam(Easter):
 
 
 ALL_GERMAN_HOLIDAY_RULES = {
-    'Karfreitag':GoodFriday,
-    # 'Ostersonntag':Holiday('Ostersonntag', month=1, day=1,
-    #                        offset=[Easter()]),
-    'Ostermontag':EasterMonday,
-    'Christi Himmelfahrt':Holiday('Christi Himmelfahrt', month=1, day=1,
-                                  offset=[Easter(), Day(39)]),
-    # 'Pfingstsonntag':Holiday('Pfingstsonntag', month=1, day=1,
-    #                          offset=[Easter(), Day(49)]),
-    'Pfingstmontag':Holiday('Pfingstmontag', month=1, day=1,
-                            offset=[Easter(), Day(50)]),
-    'Fronleichnam':Holiday('Fronleichnam', month=1, day=1,
-                           offset=[Easter(), Day(60)]),
-    'Neujahrstag':Holiday('Neujahrstag', month=1, day=1),
-    '1. Mai':Holiday('1. Mai', month=5, day=1),
-    'Erster Weihnachtstag':Holiday('Erster Weihnachtstag', month=12, day=25),
-    'Zweiter Weihnachtstag':Holiday('Zweiter Weihnachtstag', month=12, day=26),
-    'Heilige Drei Koenige':Holiday('Heilige Drei Koenige', month=1, day=6),
-    'Maria Himmelfahrt':Holiday('Maria Himmelfahrt', month=8, day=15),
-    'Tag der Deutschen Einheit':Holiday('Tag der Deutschen Einheit',
-                                        month=10, day=3),
-    'Reformationstag':Holiday('Reformationstag', month=10, day=31),
-    'Allerheiligen':Holiday('Allerheiligen', month=11, day=1),
-    'Buss und Bettag':Holiday('Buss und Bettag', month=11, day=15,
-                              offset=[Week(weekday=2)]),
+    'Karfreitag': GoodFriday,
+    # 'Ostersonntag': Holiday('Ostersonntag', month=1, day=1,
+    #                         offset=[Easter()]),
+    'Ostermontag': EasterMonday,
+    'Christi Himmelfahrt': Holiday('Christi Himmelfahrt', month=1, day=1,
+                                   offset=[Easter(), Day(39)]),
+    # 'Pfingstsonntag': Holiday('Pfingstsonntag', month=1, day=1,
+    #                           offset=[Easter(), Day(49)]),
+    'Pfingstmontag': Holiday('Pfingstmontag', month=1, day=1,
+                             offset=[Easter(), Day(50)]),
+    'Fronleichnam': Holiday('Fronleichnam', month=1, day=1,
+                            offset=[Easter(), Day(60)]),
+    'Neujahrstag': Holiday('Neujahrstag', month=1, day=1),
+    '1. Mai': Holiday('1. Mai', month=5, day=1),
+    'Erster Weihnachtstag': Holiday('Erster Weihnachtstag', month=12, day=25),
+    'Zweiter Weihnachtstag': Holiday('Zweiter Weihnachtstag', month=12, day=26),
+    'Heilige Drei Koenige': Holiday('Heilige Drei Koenige', month=1, day=6),
+    'Maria Himmelfahrt': Holiday('Maria Himmelfahrt', month=8, day=15),
+    'Tag der Deutschen Einheit': Holiday('Tag der Deutschen Einheit',
+                                         month=10, day=3),
+    'Reformationstag': Holiday('Reformationstag', month=10, day=31),
+    'Allerheiligen': Holiday('Allerheiligen', month=11, day=1),
+    'Buss und Bettag': Holiday('Buss und Bettag', month=11, day=15,
+                               offset=[Week(weekday=2)]),
 }
 
 
