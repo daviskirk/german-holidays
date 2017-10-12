@@ -14,4 +14,4 @@ def test_basic():
     expected = pd.DatetimeIndex(['2015-01-01', '2015-04-03', '2015-04-06', '2015-05-01',
                                  '2015-05-14', '2015-05-25', '2015-06-04', '2015-10-03',
                                  '2015-11-01', '2015-12-25', '2015-12-26'])
-    assert pd.util.testing.assert_index_equal(holidays, expected)
+    pd.util.testing.assert_index_equal(holidays, expected)
