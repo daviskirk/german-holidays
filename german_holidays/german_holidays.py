@@ -154,8 +154,8 @@ HOLIDAY_EXCLUDE_MAP = {
 # Add the special 500th Reformation day for states where the
 # Reformation day is not already a holiday
 for excluded_holidays in HOLIDAY_EXCLUDE_MAP.values():
-    if 'Refomationstag' not in excluded_holidays:
-        excluded_holidays.add('500. Refomationstag')
+    if 'Reformationstag' not in excluded_holidays:
+        excluded_holidays.add('500. Reformationstag')
 
 HOLIDAY_MAP = {k: (set(ALL_GERMAN_HOLIDAY_RULES.keys()) - v)
                for k, v in HOLIDAY_EXCLUDE_MAP}
