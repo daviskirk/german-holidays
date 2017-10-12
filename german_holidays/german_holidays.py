@@ -158,10 +158,24 @@ for excluded_holidays in HOLIDAY_EXCLUDE_MAP.values():
         excluded_holidays.add('500. Reformationstag')
 
 HOLIDAY_MAP = {k: (set(ALL_GERMAN_HOLIDAY_RULES.keys()) - v)
-               for k, v in HOLIDAY_EXCLUDE_MAP}
+               for k, v in HOLIDAY_EXCLUDE_MAP.items()}
 
 
 def get_german_holiday_calendar(state_code):
+    """Get german holiday calendar class for a specific state.
+
+    Valid state code abbreviations are found in the ``STATE_CODE_MAP``.
+
+    Examples:
+        Get a pandas datetime index of holidays:
+
+        .. ::
+
+           pandas_calendar_cls = get_german_holiday_calendar('NW')
+           # results in a pandas datetime index:
+           holidays = pandas_calendar_cls().holidays('2015', '2015-12-31')
+
+    """
     if state_code not in STATE_CODE_MAP:
         raise StateCodeError('', state_code)
 
