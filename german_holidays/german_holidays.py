@@ -58,7 +58,7 @@ ALL_GERMAN_HOLIDAY_RULES = {
     'Fronleichnam': Holiday('Fronleichnam', month=1, day=1,
                             offset=[Easter(), Day(60)]),
     'Neujahrstag': Holiday('Neujahrstag', month=1, day=1),
-    '1. Mai': Holiday('1. Mai', month=5, day=1),
+    'Tag der Arbeit': Holiday('Tag der Arbeit', month=5, day=1),
     'Erster Weihnachtstag': Holiday('Erster Weihnachtstag', month=12, day=25),
     'Zweiter Weihnachtstag': Holiday('Zweiter Weihnachtstag', month=12, day=26),
     'Heilige Drei Könige': Holiday('Heilige Drei Könige', month=1, day=6),
