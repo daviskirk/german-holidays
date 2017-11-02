@@ -1,0 +1,1 @@
+include LICENCE README.md .flake8 setup.py setup.cfg
