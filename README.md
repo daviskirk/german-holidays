@@ -1,3 +1,10 @@
+
+**NOTE:**
+This library was born before there were better solutions that now exist. The
+library [holidays](https://github.com/dr-prodigy/python-holidays) is better
+maintained and more accurate and includes not only german holidays but many
+other countries as well. I would suggest you use it instead.
+
 German Bank Holidays
 ====================
 
